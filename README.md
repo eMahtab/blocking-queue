@@ -6,6 +6,12 @@ The term blocking queue comes from the fact that the Java BlockingQueue is capab
 
 
 
+**size()**
+The BlockingQueue size() method returns the number of elements stored in BlockingQueue.
+
+**remainingCapacity()**
+The BlockingQueue remainingCapacity() method returns the remaining (unused) capacity of the BlockingQueue. The remaining capacity is calculated as full capacity minus the number of elements stored in the BlockingQueue.
+
 
 
 # References :
