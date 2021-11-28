@@ -19,6 +19,9 @@ The BlockingQueue put() method inserts the element into the BlockingQueue if it 
 The Java BlockingQueue take() method will remove the first element in the BlockingQueue. If the BlockingQueue does not contain any elements, the take() method will block the thread calling take() until an element is inserted into the BlockingQueue.
 
 
+A BlockingQueue is typically used to have one thread produce objects, which another thread consumes.
+
+
 
 # References :
 https://www.youtube.com/watch?v=d3xb1Nj88pw&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=17
