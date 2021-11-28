@@ -21,6 +21,8 @@ The Java BlockingQueue take() method will remove the first element in the Blocki
 
 A BlockingQueue is typically used to have one thread produce objects, which another thread consumes.
 
+![Blocking Queue](blocking-queue.png?raw=true)
+
 
 
 # References :
