@@ -29,3 +29,5 @@ The consuming thread keeps taking objects out of the BlockingQueue to processes 
 
 # References :
 https://www.youtube.com/watch?v=d3xb1Nj88pw&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=17
+http://tutorials.jenkov.com/java-util-concurrent/blockingqueue.html
+https://github.com/eMahtab/producer-consumer-pattern
