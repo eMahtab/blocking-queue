@@ -88,6 +88,39 @@ public class Main {
 }
 ```
 
+### Execution Output :
+```
+Thread-1 consumed 1730482058227
+Thread-2 consumed 1730482059228
+Thread-1 consumed 1730482060228
+Thread-2 consumed 1730482061228
+Thread-1 consumed 1730482062228
+Thread-2 consumed 1730482063228
+Thread-1 consumed 1730482064229
+Thread-2 consumed 1730482065229
+Thread-1 consumed 1730482066229
+Thread-2 consumed 1730482067229
+Thread-1 consumed 1730482068229
+Thread-2 consumed 1730482069229
+Thread-1 consumed 1730482070230
+Thread-2 consumed 1730482071230
+Thread-1 consumed 1730482072230
+Thread-2 consumed 1730482073231
+Thread-1 consumed 1730482074231
+Thread-2 consumed 1730482075231
+Thread-1 consumed 1730482076232
+Thread-2 consumed 1730482077233
+Thread-1 consumed 1730482078233
+Thread-2 consumed 1730482079233
+Thread-1 consumed 1730482080233
+Thread-2 consumed 1730482081233
+Thread-1 consumed 1730482082233
+Thread-2 consumed 1730482083233
+Thread-1 consumed 1730482084234
+Thread-2 consumed 1730482085234
+........
+```
+
 # References :
 1. https://www.youtube.com/watch?v=d3xb1Nj88pw&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=17
 
