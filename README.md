@@ -25,9 +25,72 @@ The producing thread will keep producing new objects and insert them into the Bl
 
 The consuming thread keeps taking objects out of the BlockingQueue to processes them. If the consuming thread tries to take an object out of an empty queue, the consuming thread is blocked until a producing thread puts an object into the queue.
 
+```java
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
+class Producer implements Runnable {
+    BlockingQueue<String> blockingQueue = null;
+    public Producer(BlockingQueue<String> queue) {
+        this.blockingQueue = queue;
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            long timeMillis = System.currentTimeMillis();
+            try {
+                this.blockingQueue.put("" + timeMillis);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Producer was interrupted");
+            }
+        }
+    }
+}
+
+class Consumer implements Runnable {
+    BlockingQueue<String> blockingQueue = null;
+    public Consumer(BlockingQueue<String> queue) {
+        this.blockingQueue = queue;
+    }
+
+    @Override
+    public void run() {
+        while(true){
+            try {
+                String element = this.blockingQueue.take();
+                String text = Thread.currentThread().getName() +
+                        " consumed " + element;
+                System.out.println(text);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(3);
+
+        Producer producer = new Producer(blockingQueue);
+        Consumer consumer1 = new Consumer(blockingQueue);
+        Consumer consumer2 = new Consumer(blockingQueue);
+
+        Thread producerThread = new Thread(producer);
+        Thread consumerThread1 = new Thread(consumer1);
+        Thread consumerThread2 = new Thread(consumer2);
+        producerThread.start();
+        consumerThread1.start();
+        consumerThread2.start();
+    }
+}
+```
 
 # References :
-https://www.youtube.com/watch?v=d3xb1Nj88pw&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=17
-http://tutorials.jenkov.com/java-util-concurrent/blockingqueue.html
-https://github.com/eMahtab/producer-consumer-pattern
+1. https://www.youtube.com/watch?v=d3xb1Nj88pw&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=17
+
+2. http://tutorials.jenkov.com/java-util-concurrent/blockingqueue.html
+
+3. https://github.com/eMahtab/producer-consumer-pattern
