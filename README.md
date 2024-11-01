@@ -1,6 +1,10 @@
 # Blocking Queue
 
-The Java BlockingQueue interface, java.util.concurrent.BlockingQueue, represents a queue which is thread safe to put elements into, and take elements out of from. In other words, multiple threads can be inserting and taking elements concurrently from a Java BlockingQueue, without any concurrency issues arising.
+The Java BlockingQueue interface, java.util.concurrent.BlockingQueue, represents a queue which is **thread safe** to put elements into, and take elements out of from. In other words, multiple threads can be inserting and taking elements concurrently from a Java BlockingQueue, without any concurrency issues arising.
+
+**What is meant by thread safe :**
+
+`ArrayBlockingQueue` uses internal locks to control access to the queue's elements. When one thread is accessing or modifying the queue (e.g., by calling take() to remove an element), other threads attempting to access the queue must wait until the current operation is completed and the lock is released.
 
 **The term blocking queue comes from the fact that the Java BlockingQueue is capable of blocking the threads that try to insert or take elements from the queue. For instance, if a thread tries to take an element and there are none left in the queue, the thread can be blocked until there is an element to take.**
 
